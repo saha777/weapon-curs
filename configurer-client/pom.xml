@@ -7,9 +7,9 @@
         <artifactId>weapon-configurator</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
-    <artifactId>eureka-service</artifactId>
+    <artifactId>configurer-client</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>eureka-service</name>
+    <name>configurer-client</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -18,8 +18,16 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
         <dependency>
