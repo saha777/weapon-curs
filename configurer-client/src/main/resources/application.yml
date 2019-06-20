@@ -6,6 +6,19 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8061/eureka/
 
+
+feign:
+  client:
+    config:
+      default:
+        connectTimeout: 160000000
+        readTimeout: 160000000
+
+security:
+  oauth2:
+    resource:
+      userInfoUri: http://localhost:9191/uaa/user
+
 spring:
   application:
     name: weapons-client
