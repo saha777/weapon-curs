@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "creators")
+@Table(name = "modifications")
 public class Modification {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,8 +15,4 @@ public class Modification {
     private String soundModerator;
     private String aim;
     private String customDetails;
-
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-    @JoinColumn(name = "creator_id")
-    private Creator creator;
 }

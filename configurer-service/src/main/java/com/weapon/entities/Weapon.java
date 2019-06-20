@@ -1,14 +1,13 @@
 package com.weapon.entities;
 
 import lombok.Data;
-import org.bouncycastle.math.raw.Mod;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Data
 @Entity
-@Table(name = "creators")
+@Table(name = "weapons")
 public class Weapon {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -19,9 +18,7 @@ public class Weapon {
     @JoinColumn(name = "creator_id")
     private Creator creator;
 
-    @ManyToMany
-    @JoinTable(name = "account_roles",
-            joinColumns = @JoinColumn(name = "account_id"),
-            inverseJoinColumns = @JoinColumn(name = "role_id"))
-    private List<Modification> modifications;
+    @ManyToOne
+    @JoinColumn(name = "modification_id")
+    private Modification modification;
 }

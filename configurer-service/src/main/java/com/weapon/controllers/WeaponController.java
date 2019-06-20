@@ -19,6 +19,16 @@ public class WeaponController {
         return weaponRepository.findAll();
     }
 
+    @GetMapping("/modifications/{modificationId}")
+    public List<Weapon> getByModificationId(@PathVariable Integer modificationId) {
+        return weaponRepository.findByModificationId(modificationId);
+    }
+
+    @GetMapping("/creators/{creatorId}")
+    public List<Weapon> getByCreatorId(@PathVariable Integer creatorId) {
+        return weaponRepository.findByCreatorId(creatorId);
+    }
+
     @GetMapping("/{id}")
     public Weapon getById(@PathVariable Integer id) {
         return findById(id);
