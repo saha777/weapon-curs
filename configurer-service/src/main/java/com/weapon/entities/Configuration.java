@@ -7,8 +7,8 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name = "modifications")
-public class Modification {
+@Table(name = "configurations")
+public class Configuration {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;

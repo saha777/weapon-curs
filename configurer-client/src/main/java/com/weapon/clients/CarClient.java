@@ -1,6 +1,6 @@
 package com.weapon.clients;
 
-import com.weapon.dto.Weapon;
+import com.weapon.dto.Car;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -9,26 +9,26 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.util.List;
 
-@FeignClient(name = "configurers-service", contextId = "weaponsClient", path = "/api/weapons")
-public interface WeaponClient {
+@FeignClient(name = "configurers-service", contextId = "carsClient", path = "/api/cars")
+public interface CarClient {
     @RequestMapping(method = RequestMethod.GET)
-    List<Weapon> getAll();
+    List<Car> getAll();
 
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
-    Weapon getById(@PathVariable Integer id);
+    Car getById(@PathVariable Integer id);
 
-    @RequestMapping(method = RequestMethod.GET, value = "/modifications/{modificationId}")
-    List<Weapon> getByModificationId(@PathVariable Integer modificationId);
+    @RequestMapping(method = RequestMethod.GET, value = "/configurations/{configurationId}")
+    List<Car> getByConfigurationId(@PathVariable Integer configurationId);
 
     @RequestMapping(method = RequestMethod.GET, value = "/creators/{creatorId}")
-    List<Weapon> getByCreatorId(@PathVariable Integer creatorId);
+    List<Car> getByCreatorId(@PathVariable Integer creatorId);
 
     @RequestMapping(method = RequestMethod.POST)
-    Weapon create(@RequestBody Weapon weapon);
+    Car create(@RequestBody Car car);
 
     @RequestMapping(method = RequestMethod.PUT)
-    Weapon update(@RequestBody Weapon weapon);
+    Car update(@RequestBody Car car);
 
     @RequestMapping(method = RequestMethod.DELETE, value = "/{id}")
-    Weapon delete(@PathVariable Integer id);
+    Car delete(@PathVariable Integer id);
 }

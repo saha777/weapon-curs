@@ -5,7 +5,7 @@ spring:
     allow-bean-definition-overriding: true
 
   datasource:
-    url: jdbc:postgresql://localhost:5433/accountdb
+    url: jdbc:postgresql://localhost:5433/accdb
     username: postgres
     password: postgres
   jpa:

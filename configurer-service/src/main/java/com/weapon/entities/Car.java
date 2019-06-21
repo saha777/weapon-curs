@@ -7,8 +7,8 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "weapons")
-public class Weapon {
+@Table(name = "cars")
+public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
@@ -19,6 +19,6 @@ public class Weapon {
     private Creator creator;
 
     @ManyToOne
-    @JoinColumn(name = "modification_id")
-    private Modification modification;
+    @JoinColumn(name = "configuration_id")
+    private Configuration configuration;
 }
