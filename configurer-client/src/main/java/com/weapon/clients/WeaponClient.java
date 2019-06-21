@@ -17,6 +17,12 @@ public interface WeaponClient {
     @RequestMapping(method = RequestMethod.GET, value = "/{id}")
     Weapon getById(@PathVariable Integer id);
 
+    @RequestMapping(method = RequestMethod.GET, value = "/modifications/{modificationId}")
+    List<Weapon> getByModificationId(@PathVariable Integer modificationId);
+
+    @RequestMapping(method = RequestMethod.GET, value = "/creators/{creatorId}")
+    List<Weapon> getByCreatorId(@PathVariable Integer creatorId);
+
     @RequestMapping(method = RequestMethod.POST)
     Weapon create(@RequestBody Weapon weapon);
 

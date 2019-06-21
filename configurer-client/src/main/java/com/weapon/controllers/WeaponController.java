@@ -25,6 +25,16 @@ public class WeaponController {
         return weaponClient.getById(id);
     }
 
+    @GetMapping("/modifications/{modificationId}")
+    public List<Weapon> getByModificationId(@PathVariable Integer modificationId) {
+        return weaponClient.getByModificationId(modificationId);
+    }
+
+    @GetMapping("/creators/{creatorId}")
+    public List<Weapon> getByCreatorId(@PathVariable Integer creatorId) {
+        return weaponClient.getByCreatorId(creatorId);
+    }
+
     @Secured("ROLE_ADMIN")
     @PostMapping
     public Weapon create(@RequestBody Weapon weapon) {
